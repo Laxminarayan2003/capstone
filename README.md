@@ -1,4 +1,4 @@
-School Educational System - QA SDLC
+School Educational System - QA Capstone Project
 
 Deliverables phase -1
 Project Overview:
@@ -30,11 +30,11 @@ saved correctly.
 
 RTM (Requirement Traceability Matrix)
 Req ID Description Test Cases
-Registration 
-Login
-Search
-Details
-Cart
-Payment
-Enrollment
-Dashboard
+1.Registration - high priority,high severity
+2.Login - high priority,high severity
+3.Search - low priority,low severity
+4.Details - low priority,low severity
+5.Cart - high priority,high severity
+6.Payment - high priority,high severity
+7.Enrollment - high priority,high severity
+8.Dashboard - low priority,low severity

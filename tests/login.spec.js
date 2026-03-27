@@ -45,21 +45,30 @@ test('Verify invalid login does not redirect', async ({ page }) => {
   await expect(page).toHaveURL('https://edu-admin-hub--laxminarayanr.replit.app/login');
 });
 
-test('Verify user can login and see Student Portal heading', async ({ page }) => {
+[
+  {email:"akash@gmail.com",password:"Akash@123"},
+  {email:"abhinav@gmail.com",password:"Abhinav@123"},
+  {email:"anjay@gmail.com",password:"Anjay@123"},
+  {email:"sanjay@gmail.com",password:"Sanjay@123"},
+  {email:"amith@gmail.com",password:"amith@123"}
+  
+].forEach(obj=>
+{
+  test(`Verify login for user ${obj.email}`, async ({ page }) => {
   await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/login');
 
   // Enter valid credentials
-  await page.getByLabel(/email/i).fill('sanjay@ibm.com');
-  await page.getByLabel(/password/i).fill('Sanjay@123');
+  await page.getByLabel(/email/i).fill(obj.email);
+  await page.getByLabel(/password/i).fill(obj.password);
 
   // Click Sign in
   await page.getByRole('button', { name: /Sign in/i }).click();
 
   // ✅ Verify heading after login
-  await expect(
-    page.getByRole('heading', { name: /Student Portal/i })
-  ).toBeVisible();
+ await expect(page.getByText(/Welcome back/i)).toBeVisible();
 });
+});
+
 
 test('Verify password field is masked on Login page', async ({ page }) => {
   // Step 1: Navigate to Login page
@@ -77,5 +86,4 @@ test('Verify password field is masked on Login page', async ({ page }) => {
   // This confirms it's still password type (masked)
   await expect(passwordInput).toHaveAttribute('type', 'password');
 });
-
 

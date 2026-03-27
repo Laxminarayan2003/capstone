@@ -90,3 +90,60 @@ test('Verify Explore Courses link navigation', async ({ page }) => {
   // Step 6: Verify Courses page content loaded
   await expect(page.getByText(/courses/i)).toBeVisible();
 });
+
+
+test('Verify navigation from Sign In to Welcome Back page', async ({ page }) => {
+  
+  // Step 1: Navigate to course page
+  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
+
+  // Step 2: Click on Sign In link
+  await page.getByRole('link', { name: 'Sign In', exact: true }).click();
+
+  // Step 3: Verify navigation by checking "Welcome back" heading is visible
+  await expect(page.getByRole('heading', { name: 'Welcome back' }))
+    .toBeVisible();
+    
+});
+
+
+test('Verify user can login and add course to cart', async ({ page }) => {
+
+  // Step 1: Navigate to Login page
+  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/login');
+
+  // Step 2: Enter Email
+  await page.getByRole('textbox', { name: 'Email address' })
+    .fill('vinay@ibm.com');
+
+  // Step 3: Enter Password
+  await page.getByRole('textbox', { name: 'Password' })
+    .fill('Vinay@123');
+
+  // Step 4: Click Sign In
+  await page.getByRole('button', { name: 'Sign in' }).click();
+
+  // ✅ Assertion: Verify successful login (Courses link visible)
+  await expect(page.getByRole('link', { name: 'Courses' }))
+    .toBeVisible();
+
+  // Step 5: Click on Courses
+  await page.getByRole('link', { name: 'Courses' }).click();
+
+  // ✅ Assertion: Verify Courses page loaded
+  await expect(page).toHaveURL(/.*courses/);
+
+  // Step 6: Click on first "View Details"
+  await page.getByRole('link', { name: 'View Details' })
+    .first()
+    .click();
+
+  // ✅ Assertion: Verify course details page loaded
+  await expect(page.getByRole('button', { name: 'Add to Cart' }))
+    .toBeVisible();
+
+  // Step 7: Click Add to Cart
+  await page.getByRole('button', { name: 'Add to Cart' }).click();
+
+
+});

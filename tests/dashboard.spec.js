@@ -69,3 +69,30 @@ test('Verify Save Changes button is visible after clicking Edit', async ({ page 
 
 });
 
+test('Verify Recent Payments section is visible and clickable', async ({ page }) => {
+
+  // Step 1: Navigate to dashboard
+  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/dashboard');
+
+  // Step 2: Verify "Recent Payments" is visible
+  const recentPayments = page.getByText('Recent Payments');
+  await expect(recentPayments).toBeVisible();
+
+  // Step 3: Click on it
+  await recentPayments.click();
+
+});
+
+
+test('Verify Welcome back message is displayed on dashboard', async ({ page }) => {
+
+  // Step 1: Navigate to dashboard
+  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/dashboard');
+
+  // Step 2: Verify welcome text is visible
+  await expect(
+    page.getByText("Welcome back, vinay. Here's")
+  ).toBeVisible();
+
+});
+

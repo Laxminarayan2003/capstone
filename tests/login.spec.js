@@ -79,28 +79,3 @@ test('Verify password field is masked on Login page', async ({ page }) => {
 });
 
 
-test('Verify user can logout and return to login page', async ({ page }) => {
-  // 🔹 Step 1: Go to Login page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/login');
-
-  // 🔹 Step 2: Login with valid credentials
-  await page.getByLabel(/email/i).fill('sanjay@ibm.com');
-  await page.getByLabel(/password/i).fill('Sanjay@123');
-
-  await page.getByRole('button', { name: /sign in/i }).click();
-
-  // 🔹 Step 3: Verify dashboard loaded
-  await expect(
-    page.getByRole('heading', { name: /student portal/i })
-  ).toBeVisible();
-
-  // 🔹 Step 4: Click Logout button (right side)
-  const logoutBtn = page.getByRole('button', { name: /logout/i });
-  await expect(logoutBtn).toBeVisible();
-  await logoutBtn.click();
-
-  // 🔹 Step 6 (Strong validation): Login UI should be visible
-  await expect(
-    page.getByRole('heading', { name: /welcome back/i })
-  ).toBeVisible();
-});

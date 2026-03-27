@@ -1,0 +1,44 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "Lumina" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]: Lumina
+        - heading "Welcome back" [level=1] [ref=e12]
+        - paragraph [ref=e13]: Enter your credentials to access your student portal.
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - text: Email address
+            - textbox "Email address" [ref=e17]:
+              - /placeholder: student@lumina.edu
+              - text: sanjay@ibm.com
+          - generic [ref=e18]:
+            - generic [ref=e19]:
+              - generic [ref=e20]: Password
+              - link "Forgot password?" [ref=e21] [cursor=pointer]:
+                - /url: "#"
+            - textbox "Password" [ref=e22]:
+              - /placeholder: ••••••••
+              - text: Sanjay@123
+        - button [disabled]:
+          - img
+      - generic [ref=e23]:
+        - text: Don't have an account?
+        - link "Apply now" [ref=e24] [cursor=pointer]:
+          - /url: /register
+          - text: Apply now
+          - img [ref=e25]
+    - generic [ref=e27]:
+      - img "Lumina University Campus" [ref=e29]
+      - generic [ref=e30]:
+        - heading "\"Education is the passport to the future, for tomorrow belongs to those who prepare for it today.\"" [level=2] [ref=e31]
+        - paragraph [ref=e32]: — Lumina Excellence
+  - region "Notifications (F8)":
+    - list
+```

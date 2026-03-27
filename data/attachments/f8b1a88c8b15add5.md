@@ -1,0 +1,92 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Explore Courses" [ref=e14] [cursor=pointer]:
+            - /url: /courses
+        - generic [ref=e15]:
+          - link "Sign In" [ref=e16] [cursor=pointer]:
+            - /url: /login
+          - link "Apply Now" [ref=e17] [cursor=pointer]:
+            - /url: /register
+    - main [ref=e18]:
+      - generic [ref=e19]:
+        - img "Background" [ref=e21]
+        - generic [ref=e22]:
+          - link "Back to curriculum" [ref=e23] [cursor=pointer]:
+            - /url: /courses
+            - img
+            - text: Back to curriculum
+          - generic [ref=e25]:
+            - generic [ref=e27]: Economics
+            - 'heading "Economics: Micro & Macro" [level=1] [ref=e28]'
+            - paragraph [ref=e29]:
+              - img [ref=e30]
+              - text: Led by Prof. James Wilson
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "About this course" [level=2] [ref=e37]
+            - paragraph [ref=e39]: Understand economic principles, market dynamics, and global economic systems.
+          - generic [ref=e40]:
+            - heading "What you'll learn" [level=2] [ref=e41]
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - img [ref=e44]
+                - generic [ref=e47]: Master core concepts and practical applications
+              - generic [ref=e48]:
+                - img [ref=e49]
+                - generic [ref=e52]: Collaborate with peers on real-world projects
+              - generic [ref=e53]:
+                - img [ref=e54]
+                - generic [ref=e57]: Gain insights from industry-leading instructors
+              - generic [ref=e58]:
+                - img [ref=e59]
+                - generic [ref=e62]: Earn an official Lumina University certificate
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - generic [ref=e68]: $299.99
+            - paragraph [ref=e69]: Standard tuition fee
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - generic [ref=e75]:
+                - paragraph [ref=e76]: Duration
+                - paragraph [ref=e77]: 16 weeks
+            - generic [ref=e78]:
+              - img [ref=e79]
+              - generic [ref=e81]:
+                - paragraph [ref=e82]: Format
+                - paragraph [ref=e83]: 100% Online
+            - generic [ref=e84]:
+              - img [ref=e85]
+              - generic [ref=e90]:
+                - paragraph [ref=e91]: Availability
+                - paragraph [ref=e92]: 42 of 42 seats open
+          - generic [ref=e93]:
+            - link "Sign in to enroll" [ref=e94] [cursor=pointer]:
+              - /url: /login
+            - paragraph [ref=e95]: 30-Day Money-Back Guarantee
+    - contentinfo [ref=e96]:
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - img [ref=e99]
+          - paragraph [ref=e102]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e103]:
+          - link "Privacy Policy" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e105] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e106] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list
+```

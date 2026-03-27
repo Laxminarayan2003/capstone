@@ -1,0 +1,105 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: sanjay raichur
+            - generic [ref=e25]: Student
+          - button "Logout" [active] [ref=e26]:
+            - img
+            - generic [ref=e27]: Logout
+    - main [ref=e28]:
+      - generic [ref=e30]:
+        - heading "Student Portal" [level=1] [ref=e31]
+        - paragraph [ref=e32]: Welcome back, sanjay. Here's an overview of your academic progress.
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - img [ref=e38]
+            - generic [ref=e40]:
+              - paragraph [ref=e41]: Active Courses
+              - heading "0" [level=3] [ref=e42]
+          - generic [ref=e44]:
+            - img [ref=e46]
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: Total Paid
+              - heading "$0.00" [level=3] [ref=e50]
+          - generic [ref=e52]:
+            - img [ref=e54]
+            - generic [ref=e58]:
+              - paragraph [ref=e59]: Items in Cart
+              - heading "0" [level=3] [ref=e60]
+          - generic [ref=e62]:
+            - img [ref=e64]
+            - generic [ref=e67]:
+              - paragraph [ref=e68]: Student ID
+              - heading "#0006" [level=3] [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - heading "My Courses" [level=2] [ref=e74]
+              - link "Browse more" [ref=e75] [cursor=pointer]:
+                - /url: /courses
+                - text: Browse more
+                - img
+            - generic [ref=e77]:
+              - img [ref=e78]
+              - heading "No courses yet" [level=3] [ref=e80]
+              - paragraph [ref=e81]: You haven't enrolled in any courses.
+              - link "Explore Curriculum" [ref=e82] [cursor=pointer]:
+                - /url: /courses
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e86]: Recent Payments
+              - generic [ref=e88]: No payment history found.
+            - generic [ref=e89]:
+              - generic [ref=e90]:
+                - generic [ref=e91]: Student Profile
+                - button "Edit" [ref=e92]:
+                  - img
+                  - text: Edit
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - paragraph [ref=e95]: Name
+                  - paragraph [ref=e96]: sanjay raichur
+                - generic [ref=e97]:
+                  - paragraph [ref=e98]: Email
+                  - paragraph [ref=e99]: sanjay@ibm.com
+                - generic [ref=e100]:
+                  - paragraph [ref=e101]: Phone
+                  - paragraph [ref=e102]: Not provided
+                - generic [ref=e103]:
+                  - paragraph [ref=e104]: Joined
+                  - paragraph [ref=e105]: March 2026
+    - contentinfo [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - img [ref=e109]
+          - paragraph [ref=e112]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e113]:
+          - link "Privacy Policy" [ref=e114] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e115] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e116] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list
+```

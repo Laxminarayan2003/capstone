@@ -1,0 +1,50 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: sanjay raichur
+            - generic [ref=e25]: Student
+          - button "Logout" [ref=e26]:
+            - img
+            - generic [ref=e27]: Logout
+    - main [ref=e28]:
+      - img [ref=e30]
+    - contentinfo [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - img [ref=e35]
+          - paragraph [ref=e38]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e39]:
+          - link "Privacy Policy" [ref=e40] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e42] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list [ref=e44]:
+      - listitem [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: Welcome back!
+          - generic [ref=e48]: Successfully logged into your student portal.
+        - button [ref=e49]:
+          - img [ref=e50]
+```

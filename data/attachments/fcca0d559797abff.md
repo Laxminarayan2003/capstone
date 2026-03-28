@@ -1,0 +1,50 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15]:
+            - /url: /courses
+          - link "Cart" [ref=e16]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: vinay pavadegyfgyfg
+            - generic [ref=e25]: Student
+          - button "Logout" [ref=e26]:
+            - img
+            - generic [ref=e27]: Logout
+    - main [ref=e28]:
+      - heading "Admission Cart" [level=1] [ref=e31]
+      - generic [ref=e33]:
+        - img [ref=e35]
+        - heading "Your cart is empty" [level=2] [ref=e39]
+        - paragraph [ref=e40]: Looks like you haven't added any courses yet. Discover our curriculum to get started.
+        - link "Browse Courses" [ref=e41]:
+          - /url: /courses
+    - contentinfo [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - img [ref=e45]
+          - paragraph [ref=e48]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e49]:
+          - link "Privacy Policy" [ref=e50]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e51]:
+            - /url: "#"
+          - link "Contact Support" [ref=e52]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list
+```

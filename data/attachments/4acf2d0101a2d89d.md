@@ -1,0 +1,296 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: vinay pavadegyfgyfg
+            - generic [ref=e25]: Student
+          - button "Logout" [ref=e26]:
+            - img
+            - generic [ref=e27]: Logout
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - img "Background pattern" [ref=e31]
+        - generic [ref=e32]:
+          - heading "Explore Our Curriculum" [level=1] [ref=e33]
+          - paragraph [ref=e34]: Discover world-class programs designed to accelerate your career and expand your horizons.
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - img [ref=e37]
+              - textbox "Search courses by title or instructor..." [ref=e40]
+            - combobox [ref=e42]:
+              - generic: All Categories
+              - img [ref=e43]
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - img "Mathematics for Engineers" [ref=e49]
+            - generic [ref=e51]: Mathematics
+          - generic [ref=e52]:
+            - generic [ref=e54]: Mathematics for Engineers
+            - generic [ref=e55]: by Prof. Michael Chen
+          - generic [ref=e56]:
+            - paragraph [ref=e57]: Covers calculus, linear algebra, and differential equations essential for engineering students.
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - img [ref=e60]
+                - generic [ref=e63]: 16 weeks
+              - generic [ref=e64]:
+                - img [ref=e65]
+                - generic [ref=e70]: 40 seats left
+          - generic [ref=e71]:
+            - generic [ref=e72]: $249.99
+            - link "View Details" [ref=e73] [cursor=pointer]:
+              - /url: /courses/2
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - img "Digital Marketing Fundamentals" [ref=e76]
+            - generic [ref=e78]: Marketing
+          - generic [ref=e79]:
+            - generic [ref=e81]: Digital Marketing Fundamentals
+            - generic [ref=e82]: by Ms. Jessica Williams
+          - generic [ref=e83]:
+            - paragraph [ref=e84]: Master SEO, social media marketing, content strategy, and digital advertising.
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - img [ref=e87]
+                - generic [ref=e90]: 8 weeks
+              - generic [ref=e91]:
+                - img [ref=e92]
+                - generic [ref=e97]: 60 seats left
+          - generic [ref=e98]:
+            - generic [ref=e99]: $199.99
+            - link "View Details" [ref=e100] [cursor=pointer]:
+              - /url: /courses/4
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - img "Data Science & Machine Learning" [ref=e103]
+            - generic [ref=e105]: Technology
+          - generic [ref=e106]:
+            - generic [ref=e108]: Data Science & Machine Learning
+            - generic [ref=e109]: by Dr. Alex Thompson
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: Hands-on introduction to Python, statistics, ML algorithms, and data visualization.
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - img [ref=e114]
+                - generic [ref=e117]: 24 weeks
+              - generic [ref=e118]:
+                - img [ref=e119]
+                - generic [ref=e124]: 30 seats left
+          - generic [ref=e125]:
+            - generic [ref=e126]: $449.99
+            - link "View Details" [ref=e127] [cursor=pointer]:
+              - /url: /courses/5
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - img "English Literature" [ref=e130]
+            - generic [ref=e132]: Humanities
+          - generic [ref=e133]:
+            - generic [ref=e135]: English Literature
+            - generic [ref=e136]: by Prof. Robert Anderson
+          - generic [ref=e137]:
+            - paragraph [ref=e138]: Explore classic and contemporary literature through critical analysis and creative writing.
+            - generic [ref=e139]:
+              - generic [ref=e140]:
+                - img [ref=e141]
+                - generic [ref=e144]: 14 weeks
+              - generic [ref=e145]:
+                - img [ref=e146]
+                - generic [ref=e151]: 45 seats left
+          - generic [ref=e152]:
+            - generic [ref=e153]: $179.99
+            - link "View Details" [ref=e154] [cursor=pointer]:
+              - /url: /courses/6
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - 'img "Physics: Mechanics & Thermodynamics" [ref=e157]'
+            - generic [ref=e159]: Science
+          - generic [ref=e160]:
+            - generic [ref=e162]: "Physics: Mechanics & Thermodynamics"
+            - generic [ref=e163]: by Dr. Maria Garcia
+          - generic [ref=e164]:
+            - paragraph [ref=e165]: Foundation physics covering Newtonian mechanics, energy, and thermodynamic principles.
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - img [ref=e168]
+                - generic [ref=e171]: 18 weeks
+              - generic [ref=e172]:
+                - img [ref=e173]
+                - generic [ref=e178]: 38 seats left
+          - generic [ref=e179]:
+            - generic [ref=e180]: $279.99
+            - link "View Details" [ref=e181] [cursor=pointer]:
+              - /url: /courses/7
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - img "Graphic Design Essentials" [ref=e184]
+            - generic [ref=e186]: Design
+          - generic [ref=e187]:
+            - generic [ref=e189]: Graphic Design Essentials
+            - generic [ref=e190]: by Ms. Anna Kim
+          - generic [ref=e191]:
+            - paragraph [ref=e192]: Learn design principles, typography, color theory, and Adobe Creative Suite.
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - img [ref=e195]
+                - generic [ref=e198]: 10 weeks
+              - generic [ref=e199]:
+                - img [ref=e200]
+                - generic [ref=e205]: 25 seats left
+          - generic [ref=e206]:
+            - generic [ref=e207]: $229.99
+            - link "View Details" [ref=e208] [cursor=pointer]:
+              - /url: /courses/8
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - 'img "Economics: Micro & Macro" [ref=e211]'
+            - generic [ref=e213]: Economics
+          - generic [ref=e214]:
+            - generic [ref=e216]: "Economics: Micro & Macro"
+            - generic [ref=e217]: by Prof. James Wilson
+          - generic [ref=e218]:
+            - paragraph [ref=e219]: Understand economic principles, market dynamics, and global economic systems.
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - img [ref=e222]
+                - generic [ref=e225]: 16 weeks
+              - generic [ref=e226]:
+                - img [ref=e227]
+                - generic [ref=e232]: 42 seats left
+          - generic [ref=e233]:
+            - generic [ref=e234]: $299.99
+            - link "View Details" [ref=e235] [cursor=pointer]:
+              - /url: /courses/9
+        - generic [ref=e236]:
+          - generic [ref=e237]:
+            - img "Psychology & Human Behavior" [ref=e238]
+            - generic [ref=e240]: Psychology
+          - generic [ref=e241]:
+            - generic [ref=e243]: Psychology & Human Behavior
+            - generic [ref=e244]: by Dr. Lisa Martinez
+          - generic [ref=e245]:
+            - paragraph [ref=e246]: Explore cognitive, social, and developmental psychology with real-world applications.
+            - generic [ref=e247]:
+              - generic [ref=e248]:
+                - img [ref=e249]
+                - generic [ref=e252]: 12 weeks
+              - generic [ref=e253]:
+                - img [ref=e254]
+                - generic [ref=e259]: 55 seats left
+          - generic [ref=e260]:
+            - generic [ref=e261]: $219.99
+            - link "View Details" [ref=e262] [cursor=pointer]:
+              - /url: /courses/10
+        - generic [ref=e263]:
+          - generic [ref=e264]:
+            - img "Web Development Bootcamp" [ref=e265]
+            - generic [ref=e267]: Technology
+          - generic [ref=e268]:
+            - generic [ref=e270]: Web Development Bootcamp
+            - generic [ref=e271]: by Mr. David Brown
+          - generic [ref=e272]:
+            - paragraph [ref=e273]: Build full-stack web applications using HTML, CSS, JavaScript, React, and Node.js.
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - img [ref=e276]
+                - generic [ref=e279]: 20 weeks
+              - generic [ref=e280]:
+                - img [ref=e281]
+                - generic [ref=e286]: 28 seats left
+          - generic [ref=e287]:
+            - generic [ref=e288]: $499.99
+            - link "View Details" [ref=e289] [cursor=pointer]:
+              - /url: /courses/11
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - img "Environmental Science" [ref=e292]
+            - generic [ref=e294]: Science
+          - generic [ref=e295]:
+            - generic [ref=e297]: Environmental Science
+            - generic [ref=e298]: by Dr. Nancy Taylor
+          - generic [ref=e299]:
+            - paragraph [ref=e300]: Study ecosystems, climate change, sustainability, and environmental policy.
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - img [ref=e303]
+                - generic [ref=e306]: 14 weeks
+              - generic [ref=e307]:
+                - img [ref=e308]
+                - generic [ref=e313]: 40 seats left
+          - generic [ref=e314]:
+            - generic [ref=e315]: $199.99
+            - link "View Details" [ref=e316] [cursor=pointer]:
+              - /url: /courses/12
+        - generic [ref=e317]:
+          - generic [ref=e318]:
+            - img "Introduction to Computer Science" [ref=e319]
+            - generic [ref=e321]: Technology
+          - generic [ref=e322]:
+            - generic [ref=e324]: Introduction to Computer Science
+            - generic [ref=e325]: by Dr. Sarah Johnson
+          - generic [ref=e326]:
+            - paragraph [ref=e327]: Learn the fundamentals of computer science including algorithms, data structures, and programming concepts.
+            - generic [ref=e328]:
+              - generic [ref=e329]:
+                - img [ref=e330]
+                - generic [ref=e333]: 12 weeks
+              - generic [ref=e334]:
+                - img [ref=e335]
+                - generic [ref=e340]: 49 seats left
+          - generic [ref=e341]:
+            - generic [ref=e342]: $299.99
+            - link "View Details" [ref=e343] [cursor=pointer]:
+              - /url: /courses/1
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - img "Business Administration" [ref=e346]
+            - generic [ref=e348]: Business
+          - generic [ref=e349]:
+            - generic [ref=e351]: Business Administration
+            - generic [ref=e352]: by Dr. Emily Rodriguez
+          - generic [ref=e353]:
+            - paragraph [ref=e354]: Comprehensive overview of business management, strategy, finance, and organizational behavior.
+            - generic [ref=e355]:
+              - generic [ref=e356]:
+                - img [ref=e357]
+                - generic [ref=e360]: 20 weeks
+              - generic [ref=e361]:
+                - img [ref=e362]
+                - generic [ref=e367]: 34 seats left
+          - generic [ref=e368]:
+            - generic [ref=e369]: $399.99
+            - link "View Details" [ref=e370] [cursor=pointer]:
+              - /url: /courses/3
+    - contentinfo [ref=e371]:
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - img [ref=e374]
+          - paragraph [ref=e377]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e378]:
+          - link "Privacy Policy" [ref=e379] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e380] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e381] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list
+```

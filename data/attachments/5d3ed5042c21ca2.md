@@ -1,0 +1,50 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e13]: Lumina University
+        - navigation [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e16] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart" [ref=e17] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e18]
+            - text: Cart
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: vinay pavadegyfgyfg
+            - generic [ref=e26]: Student
+          - button "Logout" [ref=e27]:
+            - img
+            - generic [ref=e28]: Logout
+    - main [ref=e29]:
+      - heading "Admission Cart" [level=1] [ref=e32]
+      - generic [ref=e34]:
+        - img [ref=e36]
+        - heading "Your cart is empty" [level=2] [ref=e40]
+        - paragraph [ref=e41]: Looks like you haven't added any courses yet. Discover our curriculum to get started.
+        - link "Browse Courses" [ref=e42] [cursor=pointer]:
+          - /url: /courses
+    - contentinfo [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - paragraph [ref=e50]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e51]:
+          - link "Privacy Policy" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list
+```

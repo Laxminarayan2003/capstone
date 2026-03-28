@@ -1,0 +1,117 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart 3" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+            - generic [ref=e21]: "3"
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: vinay pavadegyfgyfg
+            - generic [ref=e26]: Student
+          - button "Logout" [ref=e27]:
+            - img
+            - generic [ref=e28]: Logout
+    - main [ref=e29]:
+      - heading "Admission Cart" [level=1] [ref=e32]
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - img "Mathematics for Engineers" [ref=e37]
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - generic [ref=e40]:
+                  - generic [ref=e41]: Mathematics
+                  - heading "Mathematics for Engineers" [level=3] [ref=e42]:
+                    - link "Mathematics for Engineers" [ref=e43] [cursor=pointer]:
+                      - /url: /courses/2
+                  - paragraph [ref=e44]: "Instructor: Prof. Michael Chen"
+                - generic [ref=e45]: $249.99
+              - generic [ref=e46]:
+                - paragraph [ref=e47]: "Duration: 16 weeks"
+                - button "Remove" [ref=e48]:
+                  - img
+                  - text: Remove
+          - generic [ref=e49]:
+            - 'img "Physics: Mechanics & Thermodynamics" [ref=e50]'
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - generic [ref=e53]:
+                  - generic [ref=e54]: Science
+                  - 'heading "Physics: Mechanics & Thermodynamics" [level=3] [ref=e55]':
+                    - 'link "Physics: Mechanics & Thermodynamics" [ref=e56] [cursor=pointer]':
+                      - /url: /courses/7
+                  - paragraph [ref=e57]: "Instructor: Dr. Maria Garcia"
+                - generic [ref=e58]: $279.99
+              - generic [ref=e59]:
+                - paragraph [ref=e60]: "Duration: 18 weeks"
+                - button "Remove" [ref=e61]:
+                  - img
+                  - text: Remove
+          - generic [ref=e62]:
+            - img "Digital Marketing Fundamentals" [ref=e63]
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - generic [ref=e67]: Marketing
+                  - heading "Digital Marketing Fundamentals" [level=3] [ref=e68]:
+                    - link "Digital Marketing Fundamentals" [ref=e69] [cursor=pointer]:
+                      - /url: /courses/4
+                  - paragraph [ref=e70]: "Instructor: Ms. Jessica Williams"
+                - generic [ref=e71]: $199.99
+              - generic [ref=e72]:
+                - paragraph [ref=e73]: "Duration: 8 weeks"
+                - button "Remove" [ref=e74]:
+                  - img
+                  - text: Remove
+        - generic [ref=e77]:
+          - heading "Order Summary" [level=2] [ref=e78]
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - generic [ref=e81]: Subtotal (3 items)
+              - generic [ref=e82]: $729.97
+            - generic [ref=e83]:
+              - generic [ref=e84]: Platform Fee
+              - generic [ref=e85]: $25.00
+          - generic [ref=e86]:
+            - generic [ref=e87]: Total
+            - generic [ref=e88]: $754.97
+          - button "Proceed to Payment" [ref=e89]:
+            - text: Proceed to Payment
+            - img
+          - paragraph [ref=e90]: By proceeding, you agree to Lumina's Terms of Enrollment.
+    - contentinfo [ref=e91]:
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - paragraph [ref=e97]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e98]:
+          - link "Privacy Policy" [ref=e99] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e100] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e101] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list [ref=e103]:
+      - listitem [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]: Welcome back!
+          - generic [ref=e107]: Successfully logged into your student portal.
+        - button [ref=e108]:
+          - img [ref=e109]
+```

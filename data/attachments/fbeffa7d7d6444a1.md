@@ -1,0 +1,103 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - generic [ref=e6]:
+          - link "Lumina University" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img [ref=e9]
+            - generic [ref=e12]: Lumina University
+          - navigation [ref=e13]:
+            - link "Dashboard" [ref=e14] [cursor=pointer]:
+              - /url: /dashboard
+            - link "Courses" [ref=e15] [cursor=pointer]:
+              - /url: /courses
+            - link "Cart 2" [ref=e16] [cursor=pointer]:
+              - /url: /cart
+              - img [ref=e17]
+              - text: Cart
+              - generic [ref=e21]: "2"
+          - generic [ref=e23]:
+            - generic [ref=e24]:
+              - generic [ref=e25]: vinay pavadegyfgyfg
+              - generic [ref=e26]: Student
+            - button "Logout" [ref=e27]:
+              - img
+              - generic [ref=e28]: Logout
+      - main [ref=e29]:
+        - heading "Admission Cart" [level=1] [ref=e32]
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - img "Mathematics for Engineers" [ref=e37]
+              - generic [ref=e38]:
+                - generic [ref=e39]:
+                  - generic [ref=e40]:
+                    - generic [ref=e41]: Mathematics
+                    - heading "Mathematics for Engineers" [level=3] [ref=e42]:
+                      - link "Mathematics for Engineers" [ref=e43] [cursor=pointer]:
+                        - /url: /courses/2
+                    - paragraph [ref=e44]: "Instructor: Prof. Michael Chen"
+                  - generic [ref=e45]: $249.99
+                - generic [ref=e46]:
+                  - paragraph [ref=e47]: "Duration: 16 weeks"
+                  - button "Remove" [ref=e48]:
+                    - img
+                    - text: Remove
+            - generic [ref=e49]:
+              - 'img "Physics: Mechanics & Thermodynamics" [ref=e50]'
+              - generic [ref=e51]:
+                - generic [ref=e52]:
+                  - generic [ref=e53]:
+                    - generic [ref=e54]: Science
+                    - 'heading "Physics: Mechanics & Thermodynamics" [level=3] [ref=e55]':
+                      - 'link "Physics: Mechanics & Thermodynamics" [ref=e56] [cursor=pointer]':
+                        - /url: /courses/7
+                    - paragraph [ref=e57]: "Instructor: Dr. Maria Garcia"
+                  - generic [ref=e58]: $279.99
+                - generic [ref=e59]:
+                  - paragraph [ref=e60]: "Duration: 18 weeks"
+                  - button "Remove" [ref=e61]:
+                    - img
+                    - text: Remove
+          - generic [ref=e64]:
+            - heading "Order Summary" [level=2] [ref=e65]
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - generic [ref=e68]: Subtotal (2 items)
+                - generic [ref=e69]: $529.98
+              - generic [ref=e70]:
+                - generic [ref=e71]: Platform Fee
+                - generic [ref=e72]: $25.00
+            - generic [ref=e73]:
+              - generic [ref=e74]: Total
+              - generic [ref=e75]: $554.98
+            - button "Proceed to Payment" [ref=e76]:
+              - text: Proceed to Payment
+              - img
+            - paragraph [ref=e77]: By proceeding, you agree to Lumina's Terms of Enrollment.
+      - contentinfo [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - img [ref=e81]
+            - paragraph [ref=e84]: © 2025 Lumina University. All rights reserved.
+          - generic [ref=e85]:
+            - link "Privacy Policy" [ref=e86] [cursor=pointer]:
+              - /url: "#"
+            - link "Terms of Service" [ref=e87] [cursor=pointer]:
+              - /url: "#"
+            - link "Contact Support" [ref=e88] [cursor=pointer]:
+              - /url: "#"
+    - region "Notifications (F8)":
+      - list [ref=e90]:
+        - listitem [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e93]: Added to Cart
+            - generic [ref=e94]: Digital Marketing Fundamentals has been added to your cart.
+          - button [ref=e95]:
+            - img [ref=e96]
+  - status [ref=e100]: Notification Added to CartDigital Marketing Fundamentals has been added to your cart.
+```

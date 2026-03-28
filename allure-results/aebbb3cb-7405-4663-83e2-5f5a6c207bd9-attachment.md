@@ -1,0 +1,101 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Lumina University" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+          - generic [ref=e12]: Lumina University
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Courses" [ref=e15] [cursor=pointer]:
+            - /url: /courses
+          - link "Cart 2" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e17]
+            - text: Cart
+            - generic [ref=e21]: "2"
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: vinay pavadegyfgyfg
+            - generic [ref=e26]: Student
+          - button "Logout" [ref=e27]:
+            - img
+            - generic [ref=e28]: Logout
+    - main [ref=e29]:
+      - heading "Admission Cart" [level=1] [ref=e32]
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - img "Digital Marketing Fundamentals" [ref=e37]
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - generic [ref=e40]:
+                  - generic [ref=e41]: Marketing
+                  - heading "Digital Marketing Fundamentals" [level=3] [ref=e42]:
+                    - link "Digital Marketing Fundamentals" [ref=e43] [cursor=pointer]:
+                      - /url: /courses/4
+                  - paragraph [ref=e44]: "Instructor: Ms. Jessica Williams"
+                - generic [ref=e45]: $199.99
+              - generic [ref=e46]:
+                - paragraph [ref=e47]: "Duration: 8 weeks"
+                - button "Remove" [disabled]:
+                  - img
+                  - text: Remove
+          - generic [ref=e48]:
+            - img "Mathematics for Engineers" [ref=e49]
+            - generic [ref=e50]:
+              - generic [ref=e51]:
+                - generic [ref=e52]:
+                  - generic [ref=e53]: Mathematics
+                  - heading "Mathematics for Engineers" [level=3] [ref=e54]:
+                    - link "Mathematics for Engineers" [ref=e55] [cursor=pointer]:
+                      - /url: /courses/2
+                  - paragraph [ref=e56]: "Instructor: Prof. Michael Chen"
+                - generic [ref=e57]: $249.99
+              - generic [ref=e58]:
+                - paragraph [ref=e59]: "Duration: 16 weeks"
+                - button "Remove" [disabled]:
+                  - img
+                  - text: Remove
+        - generic [ref=e62]:
+          - heading "Order Summary" [level=2] [ref=e63]
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: Subtotal (2 items)
+              - generic [ref=e67]: $449.98
+            - generic [ref=e68]:
+              - generic [ref=e69]: Platform Fee
+              - generic [ref=e70]: $25.00
+          - generic [ref=e71]:
+            - generic [ref=e72]: Total
+            - generic [ref=e73]: $474.98
+          - button "Proceed to Payment" [ref=e74]:
+            - text: Proceed to Payment
+            - img
+          - paragraph [ref=e75]: By proceeding, you agree to Lumina's Terms of Enrollment.
+    - contentinfo [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - img [ref=e79]
+          - paragraph [ref=e82]: © 2025 Lumina University. All rights reserved.
+        - generic [ref=e83]:
+          - link "Privacy Policy" [ref=e84] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e85] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact Support" [ref=e86] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications (F8)":
+    - list [ref=e88]:
+      - listitem [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]: Welcome back!
+          - generic [ref=e92]: Successfully logged into your student portal.
+        - button [ref=e93]:
+          - img [ref=e94]
+```

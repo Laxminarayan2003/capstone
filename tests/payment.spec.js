@@ -1,167 +1,155 @@
+// studentPayment.spec.js
 import { test, expect } from '@playwright/test';
+import { StudentPaymentPage } from '../POM/studentPaymentPage';
 
-// ---------- LOGIN ----------
-test.beforeEach(async ({ page }) => {
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/');
+test.describe('Student Payment / Cart Tests', () => {
+  let paymentPage;
 
-  await page.getByRole('textbox', { name: 'Email address' }).fill('vinay@ibm.com');
-  await page.getByRole('textbox', { name: 'Password' }).fill('Vinay@123');
-  await page.getByRole('button', { name: 'Sign in' }).click();
+  test.beforeEach(async ({ page }) => {
+    paymentPage = new StudentPaymentPage(page);
+    await paymentPage.login('vinay@ibm.com', 'Vinay@123');
+  });
 
+  test('TC01 - Navigate to payment page', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.goToPayment();
+  });
 
-  // ✅ Ensure dashboard loaded
-  await expect(page.getByRole('link', { name: /cart/i })).toBeVisible();
-});
+  test('TC02 - Verify Secure Checkout heading', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.goToPayment();
+    await expect(paymentPage.secureCheckoutHeading).toBeVisible();
+  });
 
-// ---------- HELPER: ADD COURSE ----------
-async function addCourse(page) {
-  await page.getByRole('link', { name: 'Courses' }).click();
-  await page.getByRole('link', { name: 'View Details' }).first().click();
-  await page.getByRole('button', { name: 'Add to Cart' }).click();
-}
+  test('TC03 - Verify all fields visible', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.goToPayment();
+    await expect(paymentPage.nameOnCard).toBeVisible();
+    await expect(paymentPage.cardNumber).toBeVisible();
+    await expect(paymentPage.month).toBeVisible();
+    await expect(paymentPage.year).toBeVisible();
+    await expect(paymentPage.cvv).toBeVisible();
+  });
 
-// ---------- HELPER: GO TO PAYMENT ----------
-async function goToPayment(page) {
-  const cartLink = page.getByRole('link', { name: /cart/i });
-  await expect(cartLink).toBeVisible();
-  await cartLink.click();
+  test('TC04 - Verify total visible', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.cartLink.click();
+    await expect(paymentPage.totalText).toBeVisible();
+  });
 
-  const proceedBtn = page.getByRole('button', { name: 'Proceed to Payment' });
-  await expect(proceedBtn).toBeVisible();
-  await proceedBtn.click();
+  test('TC05 - Verify Pay button visible', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.goToPayment();
+    await expect(paymentPage.payButton).toBeVisible();
+  });
 
-  // ✅ Ensure payment page loaded
-  await expect(page.getByRole('heading', { name: 'Secure Checkout' })).toBeVisible();
-}
-// ---------- TC01 ----------
-test('TC01 - Navigate to payment page', async ({ page }) => {
-  await addCourse(page);
-  await goToPayment(page);
-});
+  test('TC06 - Click Pay without data (validation)', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.goToPayment();
+    await paymentPage.payButton.click();
+    await expect(paymentPage.page.locator('body')).toContainText(/required/i);
+  });
 
-// ---------- TC02 ----------
-test('TC02 - Verify Secure Checkout heading', async ({ page }) => {
-  await addCourse(page);
-  await goToPayment(page);
+  test('TC07 - Clear cart and validate empty', async () => {
+    await paymentPage.clearCart();
+    const removeBtns = paymentPage.page.getByRole('button', { name: /remove/i });
+    await expect(removeBtns).toHaveCount(0);
+  });
 
-  await expect(page.getByRole('heading', { name: 'Secure Checkout' })).toBeVisible();
-});
+  test('TC08 - Verify Enrollment Summary visible', async () => {
+    await paymentPage.goToPayment();
+    await expect(paymentPage.enrollmentSummaryHeading).toBeVisible();
+  });
 
-// ---------- TC03 ----------
-test('TC03 - Verify all fields visible', async ({ page }) => {
-  await addCourse(page);
-  await goToPayment(page);
+  test('TC09 - Verify Pay button visible', async () => {
+    await paymentPage.goToPayment();
+    await expect(paymentPage.payButton).toBeVisible();
+  });
 
-  await expect(page.getByRole('textbox', { name: 'Name on Card' })).toBeVisible();
-  await expect(page.getByRole('textbox', { name: 'Card Number' })).toBeVisible();
-  await expect(page.getByRole('textbox', { name: 'Month (MM)' })).toBeVisible();
-  await expect(page.getByRole('textbox', { name: 'Year (YY)' })).toBeVisible();
-  await expect(page.getByRole('textbox', { name: 'CVV' })).toBeVisible();
-});
+  test('TC10 - Click Pay without entering data', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.payButton.click();
+    await expect(paymentPage.page.locator('body')).toContainText(/required/i);
+  });
 
-// ---------- TC04 ----------
-test('TC04 - Verify total visible (fixed strict mode)', async ({ page }) => {
-  await addCourse(page);
+  test('TC11 - Enter Name on Card', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.nameOnCard.fill('John Doe');
+  });
 
-  await page.getByRole('link', { name: 'Cart' }).click();
+  test('TC12 - Enter all card details', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.fillPaymentForm({
+      number: '1234567812345678',
+      month: '12',
+      year: '26',
+      cvv: '123',
+    });
+    await expect(paymentPage.cardNumber).toHaveValue('1234567812345678');
+    await expect(paymentPage.month).toHaveValue('12');
+    await expect(paymentPage.year).toHaveValue('26');
+    await expect(paymentPage.cvv).toHaveValue('123');
+  });
 
-  await expect(
-    page.getByText('Total', { exact: true })
-  ).toBeVisible();
-});
+  test('TC13 - Fill complete payment form successfully', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.fillPaymentForm({
+      name: 'John Doe',
+      number: '1234567812345678',
+      month: '12',
+      year: '26',
+      cvv: '123',
+    });
+    await expect(paymentPage.nameOnCard).toHaveValue('John Doe');
+  });
 
-// ---------- TC05 ----------
-test('TC05 - Verify Pay button visible', async ({ page }) => {
-  await addCourse(page);
-  await goToPayment(page);
+  test('TC14 - Fill payment form with different valid details', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.fillPaymentForm({
+      name: 'Richa Sharma',
+      number: '8765432187654321',
+      month: '11',
+      year: '27',
+      cvv: '456',
+    });
+    await expect(paymentPage.nameOnCard).toHaveValue('Richa Sharma');
+  });
 
-  await expect(page.getByRole('button', { name: /Pay/i })).toBeVisible();
-});
+  test('TC15 - Fill form and verify Pay button is enabled', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.fillPaymentForm({
+      name: 'John Doe',
+      number: '1234567812345678',
+      month: '12',
+      year: '26',
+      cvv: '123',
+    });
+    await expect(paymentPage.payButton).toBeEnabled();
+  });
 
-// ---------- TC06 ----------
-test('TC06 - Click Pay without data (validation)', async ({ page }) => {
-  await addCourse(page);
-  await goToPayment(page);
+  test('TC16 - Payment page UI text', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.cartLink.click();
+    await paymentPage.proceedToPaymentButton.click();
+    await expect(paymentPage.secureCheckoutHeading).toBeVisible();
+  });
 
-  await page.getByRole('button', { name: /Pay/i }).click();
+  test('TC17 - Verify total amount text', async () => {
+    await paymentPage.addCourse();
+    await paymentPage.cartLink.click();
+    await expect(paymentPage.totalText).toBeVisible();
+  });
 
-  await expect(page.locator('body')).toContainText(/required/i);
-});
+  test('TC18 - Validate card number length error', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.cardNumber.fill('1234');
+    await paymentPage.payButton.click();
+    await expect(paymentPage.page.locator('body')).toContainText(/16 digits/i);
+  });
 
-test('TC07 - Clear cart and validate empty', async ({ page }) => {
-  await page.getByRole('link', { name: 'Cart' }).click();
-
-  const removeBtns = page.getByRole('button', { name: /remove/i });
-
-  while (await removeBtns.count() > 0) {
-    await removeBtns.first().click();
-
-    // wait for UI update
-    await expect(removeBtns).toHaveCount(await removeBtns.count() - 1);
-  }
-
-  // ✅ Best validation
-  await expect(removeBtns).toHaveCount(0);
-});
-
-test('TC08 - Verify Enrollment Summary visible', async ({ page }) => {
-  await goToPayment(page);
-  await expect(page.getByRole('heading', { name: 'Enrollment Summary' })).toBeVisible();
-});
-
-// ---------- TC09 ----------
-test('TC09 - Verify Pay button visible', async ({ page }) => {
-  await goToPayment(page);
-  await expect(page.getByRole('button', { name: /Pay/i })).toBeVisible();
-});
-
-test('TC10 - Click Pay without entering data', async ({ page }) => {
-  await goToPayment(page);
-  await page.getByRole('button', { name: /Pay/i }).click();
-
-  await expect(page.locator('body')).toContainText(/required/i);
-});
-
-// ---------- TC11 ----------
-test('TC11 - Enter Name on Card', async ({ page }) => {
-  await goToPayment(page);
-  await page.getByRole('textbox', { name: 'Name on Card' }).fill('John Doe');
-});
-
-test('TC12 - Enter all card details (Number, Expiry, CVV)', async ({ page }) => {
-  await goToPayment(page);
-
-  // Enter Card Number
-  await page.getByRole('textbox', { name: 'Card Number' }).fill('1234567812345678');
-
-  // Enter Expiry
-  await page.getByRole('textbox', { name: 'Month (MM)' }).fill('12');
-  await page.getByRole('textbox', { name: 'Year (YY)' }).fill('26');
-
-  // Enter CVV
-  await page.getByRole('textbox', { name: 'CVV' }).fill('123');
-
-  // Assertions
-  await expect(page.getByRole('textbox', { name: 'Card Number' })).toHaveValue('1234567812345678');
-  await expect(page.getByRole('textbox', { name: 'Month (MM)' })).toHaveValue('12');
-  await expect(page.getByRole('textbox', { name: 'Year (YY)' })).toHaveValue('26');
-  await expect(page.getByRole('textbox', { name: 'CVV' })).toHaveValue('123');
-});
-
-test('TC13 - Fill complete payment form successfully', async ({ page }) => {
-  await goToPayment(page);
-
-  // Fill all fields
-  await page.getByRole('textbox', { name: 'Name on Card' }).fill('John Doe');
-  await page.getByRole('textbox', { name: 'Card Number' }).fill('1234567812345678');
-  await page.getByRole('textbox', { name: 'Month (MM)' }).fill('12');
-  await page.getByRole('textbox', { name: 'Year (YY)' }).fill('26');
-  await page.getByRole('textbox', { name: 'CVV' }).fill('123');
-
-  // Assertions
-  await expect(page.getByRole('textbox', { name: 'Name on Card' })).toHaveValue('John Doe');
-  await expect(page.getByRole('textbox', { name: 'Card Number' })).toHaveValue('1234567812345678');
-  await expect(page.getByRole('textbox', { name: 'Month (MM)' })).toHaveValue('12');
-  await expect(page.getByRole('textbox', { name: 'Year (YY)' })).toHaveValue('26');
-  await expect(page.getByRole('textbox', { name: 'CVV' })).toHaveValue('123');
+  test('TC19 - Validate required fields error', async () => {
+    await paymentPage.goToPayment();
+    await paymentPage.payButton.click();
+    await expect(paymentPage.page.locator('body')).toContainText(/required/i);
+  });
 });

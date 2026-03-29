@@ -1,0 +1,49 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Bike4Sell" [ref=e7] [cursor=pointer]:
+          - /url: /login
+          - img [ref=e9]
+          - generic [ref=e14]: Bike4Sell
+        - navigation [ref=e15]:
+          - link "Estimator" [ref=e16] [cursor=pointer]:
+            - /url: /price-estimator
+            - img [ref=e17]
+            - text: Estimator
+          - link "Contact" [ref=e19] [cursor=pointer]:
+            - /url: /contact
+            - img [ref=e20]
+            - text: Contact
+        - generic [ref=e23]:
+          - link "Log in" [ref=e24] [cursor=pointer]:
+            - /url: /login
+          - link "Sign up" [ref=e25] [cursor=pointer]:
+            - /url: /register
+    - main [ref=e26]:
+      - generic [ref=e30]:
+        - img [ref=e33]
+        - heading "Welcome back" [level=1] [ref=e38]
+        - paragraph [ref=e39]: Enter your credentials to access your account
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - text: Email address
+            - textbox "you@example.com" [ref=e42]
+          - generic [ref=e43]:
+            - text: Password
+            - textbox "••••••••" [ref=e44]
+          - button "Sign in" [ref=e45]
+        - generic [ref=e46]:
+          - text: Don't have an account?
+          - link "Create one" [ref=e47] [cursor=pointer]:
+            - /url: /register
+            - text: Create one
+            - img [ref=e48]
+    - contentinfo [ref=e50]:
+      - paragraph [ref=e52]: © 2026 Bike4Sell. The premium second-hand bike marketplace.
+  - region "Notifications (F8)":
+    - list
+```

@@ -1,149 +1,48 @@
+// coursedetails.spec.js
 import { test, expect } from '@playwright/test';
+import { CourseDetailsPage } from '../POM/coursedetailsPage';
 
 test.describe('Course Details Page Tests', () => {
+  let coursePage;
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
+    coursePage = new CourseDetailsPage(page);
   });
 
-  // ✅ TC_01: Verify Course Title
-  test('Verify course title is displayed', async ({ page }) => {
+  test('TC01 - Verify course title is displayed', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
     await expect(page.getByText('Economics: Micro & Macro')).toBeVisible();
   });
-});
 
+  test('TC02 - Verify Back to curriculum navigation', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
+    await coursePage.clickBackToCurriculum();
+    await expect(page.getByText(/courses/i)).toBeVisible();
+  });
 
-test('Verify Back to curriculum navigation', async ({ page }) => {
+  test('TC03 - Verify course title is displayed correctly', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
+    await coursePage.validateCourseTitle();
+  });
 
-  // Step 1: Navigate to course details page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
+  test('TC04 - Verify About this course and What you’ll learn sections', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
+    await coursePage.validateCourseSections();
+  });
 
-  // Step 2: Locate Back link
-  const backLink = page.getByRole('link', { name: /back to curriculum/i });
+  test('TC05 - Verify Explore Courses link navigation', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
+    await coursePage.clickExploreCourses();
+    await expect(page.getByText(/courses/i)).toBeVisible();
+  });
 
-  // Step 3: Ensure it is visible
-  await expect(backLink).toBeVisible();
+  test('TC06 - Verify navigation from Sign In to Welcome Back page', async ({ page }) => {
+    await coursePage.navigateToCourse(9);
+    await coursePage.goToSignIn();
+  });
 
-  // Step 4: Click on Back link
-  await backLink.click();
-
-  // Step 5: Verify navigation to courses page
-  await expect(page).toHaveURL(/\/courses$/);
-
-  // Step 6: Optional UI verification
-  await expect(page.getByText(/courses/i)).toBeVisible();
-});
-
-test('Verify course title is displayed correctly', async ({ page }) => {
-
-  // Step 1: Navigate to course details page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
-
-  // Step 2: Locate heading
-  const courseTitle = page.getByRole('heading', { name: 'Economics: Micro & Macro' });
-
-  // Step 3: Verify visibility
-  await expect(courseTitle).toBeVisible();
-
-  // Step 4: Verify correct text
-  await expect(courseTitle).toHaveText('Economics: Micro & Macro');
-});
-
-test('Verify About this course and What you’ll learn sections', async ({ page }) => {
-
-  // Step 1: Navigate to course details page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
-
-  // Step 2: Verify "About this course" section
-  const aboutSection = page.getByRole('heading', { name: 'About this course' });
-  await expect(aboutSection).toBeVisible();
-
-  // Optional: verify description under it
-  await expect(page.getByText(/understand economic/i)).toBeVisible();
-
-  // Step 3: Verify "What you'll learn" section
-  const learnSection = page.getByRole('heading', { name: /what you'll learn/i });
-  await expect(learnSection).toBeVisible();
-
-  // Step 4: Verify learning points
-  await expect(page.getByText('Master core concepts')).toBeVisible();
-  await expect(page.getByText('Collaborate with peers')).toBeVisible();
-});
-
-test('Verify Explore Courses link navigation', async ({ page }) => {
-
-  // Step 1: Navigate to course details page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
-
-  // Step 2: Locate Explore Courses link
-  const exploreLink = page.getByRole('link', { name: /explore courses/i });
-
-  // Step 3: Verify it is visible
-  await expect(exploreLink).toBeVisible();
-
-  // Step 4: Click on Explore Courses
-  await exploreLink.click();
-
-  // Step 5: Verify navigation to courses page
-  await expect(page).toHaveURL(/\/courses$/);
-
-  // Step 6: Verify Courses page content loaded
-  await expect(page.getByText(/courses/i)).toBeVisible();
-});
-
-
-test('Verify navigation from Sign In to Welcome Back page', async ({ page }) => {
-  
-  // Step 1: Navigate to course page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/courses/9');
-
-  // Step 2: Click on Sign In link
-  await page.getByRole('link', { name: 'Sign In', exact: true }).click();
-
-  // Step 3: Verify navigation by checking "Welcome back" heading is visible
-  await expect(page.getByRole('heading', { name: 'Welcome back' }))
-    .toBeVisible();
-    
-});
-
-
-test('Verify user can login and add course to cart', async ({ page }) => {
-
-  // Step 1: Navigate to Login page
-  await page.goto('https://edu-admin-hub--laxminarayanr.replit.app/login');
-
-  // Step 2: Enter Email
-  await page.getByRole('textbox', { name: 'Email address' })
-    .fill('vinay@ibm.com');
-
-  // Step 3: Enter Password
-  await page.getByRole('textbox', { name: 'Password' })
-    .fill('Vinay@123');
-
-  // Step 4: Click Sign In
-  await page.getByRole('button', { name: 'Sign in' }).click();
-
-  // ✅ Assertion: Verify successful login (Courses link visible)
-  await expect(page.getByRole('link', { name: 'Courses' }))
-    .toBeVisible();
-
-  // Step 5: Click on Courses
-  await page.getByRole('link', { name: 'Courses' }).click();
-
-  // ✅ Assertion: Verify Courses page loaded
-  await expect(page).toHaveURL(/.*courses/);
-
-  // Step 6: Click on first "View Details"
-  await page.getByRole('link', { name: 'View Details' })
-    .first()
-    .click();
-
-  // ✅ Assertion: Verify course details page loaded
-  await expect(page.getByRole('button', { name: 'Add to Cart' }))
-    .toBeVisible();
-
-  // Step 7: Click Add to Cart
-  await page.getByRole('button', { name: 'Add to Cart' }).click();
-
-
+  test('TC07 - Verify user can login and add course to cart', async ({ page }) => {
+    await coursePage.login('vinay@ibm.com', 'Vinay@123');
+    await coursePage.addFirstCourseToCart();
+  });
 });

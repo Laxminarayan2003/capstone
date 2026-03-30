@@ -100,11 +100,6 @@ test('checking for Browse available bikes link navigates to browse bike page', a
 });
 
 
-test.skip('Verify orders page loads', async ({ page }) => {
-    await expect(page).toHaveURL(/orders/);
-});
-
-
 // 2
 test('Verify page is visible', async ({ page }) => {
     await expect(page.locator('body')).toBeVisible();
@@ -131,12 +126,6 @@ test('Verify user stays logged in', async ({ page }) => {
     await expect(page).not.toHaveURL(/login/);
 });
 
-
-// 5
-test.skip('Verify refresh keeps orders page', async ({ page }) => {
-    await page.reload();
-    await expect(page).toHaveURL(/orders/);
-});
 
 
 // 6
@@ -170,13 +159,6 @@ test('Verify direct URL navigation works', async ({ page }) => {
 // 10
 test('Verify no crash on load', async ({ page }) => {
     await expect(page.locator('body')).toBeVisible();
-});
-
-
-// 11
-test.skip('Verify session persists after reload', async ({ page }) => {
-    await page.reload();
-    await expect(page).not.toHaveURL(/login/);
 });
 
 

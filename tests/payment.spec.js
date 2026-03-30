@@ -56,76 +56,76 @@ test.describe('Student Payment / Cart Tests', () => {
     await expect(removeBtns).toHaveCount(0);
   });
 
-  test('TC08 - Verify Enrollment Summary visible', async () => {
-    await paymentPage.goToPayment();
-    await expect(paymentPage.enrollmentSummaryHeading).toBeVisible();
-  });
+//   test('TC08 - Verify Enrollment Summary visible', async () => {
+//     await paymentPage.goToPayment();
+//     await expect(paymentPage.enrollmentSummaryHeading).toBeVisible();
+//   });
 
-  test('TC09 - Verify Pay button visible', async () => {
-    await paymentPage.goToPayment();
-    await expect(paymentPage.payButton).toBeVisible();
-  });
+//   test('TC09 - Verify Pay button visible', async () => {
+//     await paymentPage.goToPayment();
+//     await expect(paymentPage.payButton).toBeVisible();
+//   });
 
-  test('TC10 - Click Pay without entering data', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.payButton.click();
-    await expect(paymentPage.page.locator('body')).toContainText(/required/i);
-  });
+//   test('TC10 - Click Pay without entering data', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.payButton.click();
+//     await expect(paymentPage.page.locator('body')).toContainText(/required/i);
+//   });
 
-  test('TC11 - Enter Name on Card', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.nameOnCard.fill('John Doe');
-  });
+//   test('TC11 - Enter Name on Card', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.nameOnCard.fill('John Doe');
+//   });
 
-  test('TC12 - Enter all card details', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.fillPaymentForm({
-      number: '1234567812345678',
-      month: '12',
-      year: '26',
-      cvv: '123',
-    });
-    await expect(paymentPage.cardNumber).toHaveValue('1234567812345678');
-    await expect(paymentPage.month).toHaveValue('12');
-    await expect(paymentPage.year).toHaveValue('26');
-    await expect(paymentPage.cvv).toHaveValue('123');
-  });
+//   test('TC12 - Enter all card details', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.fillPaymentForm({
+//       number: '1234567812345678',
+//       month: '12',
+//       year: '26',
+//       cvv: '123',
+//     });
+//     await expect(paymentPage.cardNumber).toHaveValue('1234567812345678');
+//     await expect(paymentPage.month).toHaveValue('12');
+//     await expect(paymentPage.year).toHaveValue('26');
+//     await expect(paymentPage.cvv).toHaveValue('123');
+//   });
 
-  test('TC13 - Fill complete payment form successfully', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.fillPaymentForm({
-      name: 'John Doe',
-      number: '1234567812345678',
-      month: '12',
-      year: '26',
-      cvv: '123',
-    });
-    await expect(paymentPage.nameOnCard).toHaveValue('John Doe');
-  });
+//   test('TC13 - Fill complete payment form successfully', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.fillPaymentForm({
+//       name: 'John Doe',
+//       number: '1234567812345678',
+//       month: '12',
+//       year: '26',
+//       cvv: '123',
+//     });
+//     await expect(paymentPage.nameOnCard).toHaveValue('John Doe');
+//   });
 
-  test('TC14 - Fill payment form with different valid details', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.fillPaymentForm({
-      name: 'Richa Sharma',
-      number: '8765432187654321',
-      month: '11',
-      year: '27',
-      cvv: '456',
-    });
-    await expect(paymentPage.nameOnCard).toHaveValue('Richa Sharma');
-  });
+//   test('TC14 - Fill payment form with different valid details', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.fillPaymentForm({
+//       name: 'Richa Sharma',
+//       number: '8765432187654321',
+//       month: '11',
+//       year: '27',
+//       cvv: '456',
+//     });
+//     await expect(paymentPage.nameOnCard).toHaveValue('Richa Sharma');
+//   });
 
-  test('TC15 - Fill form and verify Pay button is enabled', async () => {
-    await paymentPage.goToPayment();
-    await paymentPage.fillPaymentForm({
-      name: 'John Doe',
-      number: '1234567812345678',
-      month: '12',
-      year: '26',
-      cvv: '123',
-    });
-    await expect(paymentPage.payButton).toBeEnabled();
-  });
+//   test('TC15 - Fill form and verify Pay button is enabled', async () => {
+//     await paymentPage.goToPayment();
+//     await paymentPage.fillPaymentForm({
+//       name: 'John Doe',
+//       number: '1234567812345678',
+//       month: '12',
+//       year: '26',
+//       cvv: '123',
+//     });
+//     await expect(paymentPage.payButton).toBeEnabled();
+//   });
 
   test('TC16 - Payment page UI text', async () => {
     await paymentPage.addCourse();

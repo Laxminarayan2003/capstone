@@ -149,7 +149,7 @@ test('Verify page title', async ({ page }) => {
 });
 
 
-// 9
+9
 test('Verify direct URL navigation works', async ({ page }) => {
     await page.goto('http://bike-value-estimator--praveensappaoff.replit.app/orders');
     await expect(page).toHaveURL(/orders/);
